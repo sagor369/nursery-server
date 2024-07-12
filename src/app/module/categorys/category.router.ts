@@ -6,7 +6,11 @@ import { categoryValidation } from "./category.validation";
 
 const router = Router()
 
-router.post("/" ,RequestValidation(categoryValidation), CategoryController.postCategory)
+router.post("/create-category" ,RequestValidation(categoryValidation), CategoryController.postCategory)
+router.get("/", CategoryController.getAllCategory)
+router.get("/:id", CategoryController.getSingleCategory)
+router.patch("/:id", CategoryController.updateCategory)
+router.delete("/:id", CategoryController.deleteCategory)
 
 
 export const CategoryRoute = router

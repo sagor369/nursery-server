@@ -3,7 +3,7 @@ import { TPlants } from "./plants.interface";
 
 const plantsSchema = new Schema<TPlants>({
   name: { 
-    typeP: String, 
+    type: String, 
     required: true 
 },
 description: {
@@ -25,6 +25,10 @@ imageUrl: {
 categoryId:{
     type: Schema.Types.ObjectId,
     required: true
+},
+isDelete:{
+     type: Boolean,
+     default: false
 }
 },
 {

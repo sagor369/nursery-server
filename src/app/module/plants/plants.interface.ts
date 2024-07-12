@@ -6,6 +6,7 @@ export type TPlants =
         price: number           
         quantity: number        
         description: string     
-        categoryId: Types.ObjectId      
+        categoryId: Types.ObjectId   
+        isDelete: boolean   
         imageUrl: string       
       }
