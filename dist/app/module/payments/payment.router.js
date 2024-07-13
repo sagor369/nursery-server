@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PaymentRouter = void 0;
+const express_1 = require("express");
+const payment_contoller_1 = require("./payment.contoller");
+const RequestValidation_1 = require("../../middelware/RequestValidation");
+const payment_validation_1 = require("./payment.validation");
+const router = (0, express_1.Router)();
+router.post("/payment-intent", payment_contoller_1.PaymentController.paymentIntent);
+router.post("/create-payment", (0, RequestValidation_1.RequestValidation)(payment_validation_1.paymentValidation), payment_contoller_1.PaymentController.postPayment);
+router.get("/", payment_contoller_1.PaymentController.getAllPayment);
+router.get("/:id", payment_contoller_1.PaymentController.getSinglePayment);
+router.patch("/:id", payment_contoller_1.PaymentController.updatePayment);
+exports.PaymentRouter = router;

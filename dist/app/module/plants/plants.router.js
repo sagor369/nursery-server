@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PlanteRouter = void 0;
+const express_1 = require("express");
+const plants_controller_1 = require("./plants.controller");
+const RequestValidation_1 = require("../../middelware/RequestValidation");
+const plants_validation_1 = require("./plants.validation");
+const router = (0, express_1.Router)();
+router.post("/create-plant", (0, RequestValidation_1.RequestValidation)(plants_validation_1.PlantsValidation), plants_controller_1.PlantController.postPlants);
+router.get("/", plants_controller_1.PlantController.getAllPlant);
+router.get("/:id", plants_controller_1.PlantController.getSinglePlant);
+router.patch("/:id", plants_controller_1.PlantController.updatePlant);
+router.delete("/:id", plants_controller_1.PlantController.deletePlante);
+exports.PlanteRouter = router;

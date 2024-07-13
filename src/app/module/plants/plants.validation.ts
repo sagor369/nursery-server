@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const PlantsValidation = z.object({
+  body: z.object({
     name: z.string({
       required_error: "Name is required"
     }),
@@ -19,4 +20,5 @@ export const PlantsValidation = z.object({
     categoryId: z.string({
         required_error: "Image URL is required"
       })
-  });
+  })
+});
