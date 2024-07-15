@@ -3,13 +3,14 @@ import { Types } from "mongoose"
 export type TProducts = {
     product: Types.ObjectId
     quantity: number
+    totalAmount: number
     
 }
 
 export type TPayments = {
-    userId : Types.ObjectId
+    email : Types.ObjectId
     products: TProducts[]
-    amount: number
     quantitys: number
     paymentId: string
+    totalAmount:number
 }

@@ -9,24 +9,29 @@ product: {
 quantity:{
     type: Number,
     required: true
+},
+totalAmount:{
+    type: Number,
+    required:true
 }
 })
 
 const paymentSchema = new Schema<TPayments>({
-    userId:{
+    email:{
         type: Schema.Types.ObjectId,
         required:true
     },
-    amount:{
-        type: Number,
-        required:true 
-    },
+    
     quantitys: {
         type: Number,
         required: true 
     },
     paymentId:{
         type: String,
+        required:true
+    },
+    totalAmount:{
+        type: Number,
         required:true
     },
     products: {

@@ -10,6 +10,7 @@ export class QueryBuilder<T> {
   }
   search(searchFields: string[]) {
     const searchTerm = this?.query?.searchTerm;
+    console.log(searchTerm)
     if (searchTerm) {
       this.modelQuery = this.modelQuery.find({
         $or: searchFields.map(
@@ -33,11 +34,11 @@ export class QueryBuilder<T> {
     this.modelQuery = this.modelQuery.find(queryObj as FilterQuery<T>);
 
     return this;
-  }
+  } 
 
   sort() {
     const sort =
-      (this?.query?.sort as string)?.split(',')?.join(' ') || '-createdAt';
+      (this?.query?.sort as string)?.split(',')?.join(' ') || 'name';
     this.modelQuery = this.modelQuery.sort(sort as string);
 
     return this;

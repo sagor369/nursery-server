@@ -7,7 +7,12 @@ const createPlantsInToDb = async (payload: TPlants) => {
   return result;
 };
 const getPlants = async (query: Record<string, unknown>) => {
-  const queryPlants = new QueryBuilder(Plants.find(), query);
+  const searchFields = ["name", "description"]
+  const queryPlants = new QueryBuilder(Plants.find(), query)
+    .search(searchFields)
+    .filter()
+    .paginate()
+    .sort();
   const result = await queryPlants.modelQuery;
   return result;
 };
