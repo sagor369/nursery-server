@@ -19,7 +19,9 @@ const http_status_1 = __importDefault(require("http-status"));
 const payment_services_1 = require("./payment.services");
 const paymentIntent = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { amount } = req.body;
-    const { client_secret } = yield payment_services_1.PaymentService.paymentIntent(amount);
+    const tk = parseFloat(amount);
+    console.log(req.body, "tk", tk);
+    const { client_secret } = yield payment_services_1.PaymentService.paymentIntent(tk);
     (0, sendRespons_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,

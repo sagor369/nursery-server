@@ -10,4 +10,4 @@ router.get("/", PaymentController.getAllPayment)
 router.get("/:id", PaymentController.getSinglePayment)
 router.patch("/:id", PaymentController.updatePayment)
 
-export const PaymentRouter = router
+export const PaymentRouter = router 

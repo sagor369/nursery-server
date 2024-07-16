@@ -17,7 +17,12 @@ const createPlantsInToDb = (payload) => __awaiter(void 0, void 0, void 0, functi
     return result;
 });
 const getPlants = (query) => __awaiter(void 0, void 0, void 0, function* () {
-    const queryPlants = new QueriBuilder_1.QueryBuilder(plants_model_1.Plants.find(), query);
+    const searchFields = ["name", "description"];
+    const queryPlants = new QueriBuilder_1.QueryBuilder(plants_model_1.Plants.find(), query)
+        .search(searchFields)
+        .filter()
+        .paginate()
+        .sort();
     const result = yield queryPlants.modelQuery;
     return result;
 });

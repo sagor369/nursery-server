@@ -18,7 +18,7 @@ totalAmount:{
 
 const paymentSchema = new Schema<TPayments>({
     email:{
-        type: Schema.Types.ObjectId,
+        type: String,
         required:true
     },
     

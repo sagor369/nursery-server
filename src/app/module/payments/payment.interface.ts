@@ -8,7 +8,7 @@ export type TProducts = {
 }
 
 export type TPayments = {
-    email : Types.ObjectId
+    email : string
     products: TProducts[]
     quantitys: number
     paymentId: string

@@ -10,15 +10,15 @@ const productSchema = new mongoose_1.Schema({
     quantity: {
         type: Number,
         required: true
+    },
+    totalAmount: {
+        type: Number,
+        required: true
     }
 });
 const paymentSchema = new mongoose_1.Schema({
-    userId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        required: true
-    },
-    amount: {
-        type: Number,
+    email: {
+        type: String,
         required: true
     },
     quantitys: {
@@ -27,6 +27,10 @@ const paymentSchema = new mongoose_1.Schema({
     },
     paymentId: {
         type: String,
+        required: true
+    },
+    totalAmount: {
+        type: Number,
         required: true
     },
     products: {
