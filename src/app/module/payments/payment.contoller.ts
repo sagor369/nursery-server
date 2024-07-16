@@ -7,7 +7,6 @@ import { PaymentService } from "./payment.services";
 const paymentIntent = catchAsync(async (req: Request, res: Response) => {
   const { amount } = req.body;
   const tk = parseFloat(amount)
-  console.log(req.body, "tk",tk)
   const {client_secret} = await PaymentService.paymentIntent(tk);
   sendResponse(res, {
     statusCode: httpStatus.OK,

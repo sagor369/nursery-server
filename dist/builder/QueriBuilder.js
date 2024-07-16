@@ -9,7 +9,6 @@ class QueryBuilder {
     search(searchFields) {
         var _a;
         const searchTerm = (_a = this === null || this === void 0 ? void 0 : this.query) === null || _a === void 0 ? void 0 : _a.searchTerm;
-        console.log(searchTerm);
         if (searchTerm) {
             this.modelQuery = this.modelQuery.find({
                 $or: searchFields.map((field) => ({
@@ -35,7 +34,7 @@ class QueryBuilder {
     paginate() {
         var _a, _b;
         const page = Number((_a = this === null || this === void 0 ? void 0 : this.query) === null || _a === void 0 ? void 0 : _a.page) || 1;
-        const limit = Number((_b = this === null || this === void 0 ? void 0 : this.query) === null || _b === void 0 ? void 0 : _b.limit) || 12;
+        const limit = Number((_b = this === null || this === void 0 ? void 0 : this.query) === null || _b === void 0 ? void 0 : _b.limit) || 20;
         const skip = (page - 1) * limit;
         this.modelQuery = this.modelQuery.skip(skip).limit(limit);
         return this;

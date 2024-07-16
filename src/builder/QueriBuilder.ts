@@ -10,7 +10,6 @@ export class QueryBuilder<T> {
   }
   search(searchFields: string[]) {
     const searchTerm = this?.query?.searchTerm;
-    console.log(searchTerm)
     if (searchTerm) {
       this.modelQuery = this.modelQuery.find({
         $or: searchFields.map(
@@ -46,7 +45,7 @@ export class QueryBuilder<T> {
 
   paginate() {
     const page = Number(this?.query?.page) || 1;
-    const limit = Number(this?.query?.limit) || 12;
+    const limit = Number(this?.query?.limit)|| 20;
     const skip = (page - 1) * limit;
 
     this.modelQuery = this.modelQuery.skip(skip).limit(limit);

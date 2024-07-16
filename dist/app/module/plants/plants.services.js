@@ -21,8 +21,10 @@ const getPlants = (query) => __awaiter(void 0, void 0, void 0, function* () {
     const queryPlants = new QueriBuilder_1.QueryBuilder(plants_model_1.Plants.find(), query)
         .search(searchFields)
         .filter()
-        .paginate()
         .sort();
+    if (query.page) {
+        queryPlants.paginate();
+    }
     const result = yield queryPlants.modelQuery;
     return result;
 });

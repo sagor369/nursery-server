@@ -11,8 +11,10 @@ const getPlants = async (query: Record<string, unknown>) => {
   const queryPlants = new QueryBuilder(Plants.find(), query)
     .search(searchFields)
     .filter()
-    .paginate()
     .sort();
+    if(query.page){
+      queryPlants.paginate()
+    }
   const result = await queryPlants.modelQuery;
   return result;
 };
