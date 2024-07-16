@@ -15,8 +15,17 @@ Payment Gateway Integration: Secure payment processing through popular payment g
 Advanced Search: Enable customers to search for plants by various criteria such as type, care requirements, price range, and availability.
 Filtering Options: Filters to refine search results based on categories, name, and other attributes.
 
+## Project use technology 
+1) Node.js
+2) Express js
+3) Typescript 
+4) Mongoose
+5) Zod validation 
+6) Stripe payment gatway
+7) Http Status 
 
 ## project API endpoint 
+* Plants Api 
  - create plant(post)  
  > "/plants/create-plant"
  - get all plants(get) 
@@ -27,3 +36,26 @@ Filtering Options: Filters to refine search results based on categories, name, a
  >"/plants/:id"
  - delete plant (delete)
  >"/plants/:id"
+
+* Categorys Api 
+ - create Category(post)  
+ > "/category/create-category"
+ - get all category(get) 
+ > "/category"
+ - get single Category(get) 
+ > "/category/:id"
+ - update Category (patch)
+ >"/category/:id"
+ - delete Category (delete)
+ >"/category/:id"
+
+* Payment Api 
+ - create payment(post)  
+ > "/category/create-payment"
+ - get all category(get) 
+ > "/category"
+ - get single payment(get) 
+ > "/category/:id"
+ - update payment (patch)
+ >"/category/:id"
+
