@@ -24,7 +24,7 @@ const getAllPlant = catchAsync(
         sendResponse(res, {
             statusCode: httpStatus.OK,
             success: true,
-            message: 'plants is created succesfully',
+            message: 'plants is fetching succesfully',
             data: result,
           });
         }
@@ -36,7 +36,7 @@ const getSinglePlant = catchAsync(
         sendResponse(res, {
             statusCode: httpStatus.OK,
             success: true,
-            message: 'plants is created succesfully',
+            message: 'plants is fetching succesfully',
             data: result,
           });
         }
@@ -49,7 +49,7 @@ const updatePlant = catchAsync(
         sendResponse(res, {
             statusCode: httpStatus.OK,
             success: true,
-            message: 'plants is created succesfully',
+            message: 'plants is updated succesfully',
             data: result,
           });
         }
@@ -61,7 +61,7 @@ const deletePlante = catchAsync(
         sendResponse(res, {
             statusCode: httpStatus.OK,
             success: true,
-            message: 'plants is created succesfully',
+            message: 'plants is deleted succesfully',
             data: result,
           });
         }

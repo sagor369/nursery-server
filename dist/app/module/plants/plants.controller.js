@@ -33,7 +33,7 @@ const getAllPlant = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, vo
     (0, sendRespons_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'plants is created succesfully',
+        message: 'plants is fetching succesfully',
         data: result,
     });
 }));
@@ -43,7 +43,7 @@ const getSinglePlant = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0,
     (0, sendRespons_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'plants is created succesfully',
+        message: 'plants is fetching succesfully',
         data: result,
     });
 }));
@@ -54,7 +54,7 @@ const updatePlant = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, vo
     (0, sendRespons_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'plants is created succesfully',
+        message: 'plants is updated succesfully',
         data: result,
     });
 }));
@@ -64,7 +64,7 @@ const deletePlante = (0, CatchAsync_1.default)((req, res) => __awaiter(void 0, v
     (0, sendRespons_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'plants is created succesfully',
+        message: 'plants is deleted succesfully',
         data: result,
     });
 }));
